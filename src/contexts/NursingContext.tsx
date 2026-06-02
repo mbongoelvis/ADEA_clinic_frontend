@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react"
+import { createContext, useContext, useState, type ReactNode } from "react"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -731,7 +731,7 @@ export function NursingProvider({ children }: { children: ReactNode }) {
   const updateAssessment = (id: string, data: Partial<NursingAssessment>) => {
     const now = new Date().toISOString()
     const updated = entries.map((e) =>
-      e.id === id ? { ...e, ...data, lastUpdatedAt: now } : e
+      e.id === id ? ({ ...e, ...data, lastUpdatedAt: now } as NursingEntry) : e
     )
     persist(updated)
   }

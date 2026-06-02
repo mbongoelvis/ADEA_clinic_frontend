@@ -153,7 +153,7 @@ const STATUS_VARIANTS: Record<
 export default function PurchaseOrdersPage() {
   const [createOpen, setCreateOpen] = useState(false)
   const [receiveId, setReceiveId] = useState<string | null>(null)
-  const [supDialogOpen, setSupDialogOpen] = useState(false)
+  const [_supDialogOpen, setSupDialogOpen] = useState(false)
 
   const receivingPO = MOCK_POS.find((p) => p.id === receiveId)
 
